@@ -1,0 +1,10 @@
+src: "src"
+output: 'dist'
+
+collections_config:
+  - posts:
+    path: 'pages/posts'
+    output: true
+    parser: 'frontmatter'
+    glob:
+      - "*.md"
