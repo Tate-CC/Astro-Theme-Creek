@@ -1,10 +1,10 @@
-src: "src"
-output: 'dist'
+source: src
+output: dist
 
 collections_config:
-  - posts:
-    path: 'pages/posts'
+  posts:
+    path: pages/posts
     output: true
-    parser: 'frontmatter'
+    parser: front-matter
     glob:
-      - "*.md"
+      - '**/*.md'
