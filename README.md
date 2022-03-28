@@ -1,4 +1,5 @@
 # Astro Creek - a blog theme for Astro
+[![Deploy to CloudCannon](https://buttons.cloudcannon.com/deploy.svg)](https://app.cloudcannon.com/register#sites/connect/github/Tate-CC/Astro-Theme-Creek)
 
 ![](./public/images/creek.png)
 
