@@ -10,21 +10,24 @@ const getFilename = (filePath) => {
 }
 
 module.exports = {
-  "source": "src",
-  "output": "dist",
+  source: "src",
+  output: "dist",
 
-  "collections_config": {
-    "posts": {
-      "path": "pages/posts",
-      "output": true,
-      "parser": "front-matter",
-      "glob": ['**/*.md'],
-      "url": (filePath) => `/posts/${getFilename(filePath)}`,
-      "_inputs": {
-        "hero": {
+  collections_config: {
+    _inputs: {
+      layout: { hidden: true }
+    },
+    posts: {
+      path: "pages/posts",
+      output: true,
+      parser: "front-matter",
+      glob: ['**/*.md'],
+      url: (filePath) => `/posts/${getFilename(filePath)}`,
+      _inputs: {
+        hero: {
           type: 'image'
         },
-        "tags": {
+        tags: {
           type: "multiselect",
           options: {
             values: "collections.tags"
@@ -32,24 +35,24 @@ module.exports = {
         }
       }
     },
-    "tags": {
-      "path": "pages/tags",
-      "output": true,
-      "parser": "front-matter",
-      "url": (filePath) => `/tags/${getFilename(filePath)}`,
-      "glob": ['**/*.md'],
-      "filter": {
-        "exclude": ["index.md"]
+    tags: {
+      path: "pages/tags",
+      output: true,
+      parser: "front-matter",
+      url: (filePath) => `/tags/${getFilename(filePath)}`,
+      glob: ['**/*.md'],
+      filter: {
+        exclude: ["index.md"]
       }
     },
-    "pages": {
-      "path": "pages",
-      "output": true,
-      "parser": "front-matter",
-      "url": (filePath) => `/${getFilename(filePath)}`,
-      "glob": ['**/*.md'],
-      "filter": {
-        "base": "strict"
+    pages: {
+      path: "pages",
+      output: true,
+      parser: "front-matter",
+      url: (filePath) => `/${getFilename(filePath)}`,
+      glob: ['**/*.md'],
+      filter: {
+        base: "strict"
       }
     }
   }
