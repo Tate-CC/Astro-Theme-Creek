@@ -15,7 +15,9 @@ const {title, description, date, hero, youtube} = content;
     <Nav />
     <main class="py-12 lg:py-20">
       <BlogPost title={title} hero={hero} date={date} youtube={youtube} >
-        <slot />
+        <div class="content">
+          <slot />
+        </div>
       </BlogPost>
     </main>
   </body>
