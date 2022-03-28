@@ -23,7 +23,10 @@ module.exports = {
       "output": true,
       "parser": "front-matter",
       "url": (filePath) => `/tags/${getFilename(filePath)}`,
-      "glob": ['**/*.md']
+      "glob": ['**/*.md'],
+      "filter":{
+        "exclude": ["index.md"]
+      }
     },
     "pages": {
       "path": "pages",
