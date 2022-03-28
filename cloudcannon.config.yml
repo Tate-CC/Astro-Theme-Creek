@@ -8,9 +8,15 @@ collections_config:
     parser: front-matter
     glob:
       - '**/*.md'
+  tags:
+    path: pages/tags
+    output: true
+    parser: front-matter
+    glob:
+      - '**/*.md'
   pages:
     path: pages
     output: true
     parser: front-matter
     glob:
-      - '**/*.md'
+      - '*.md'

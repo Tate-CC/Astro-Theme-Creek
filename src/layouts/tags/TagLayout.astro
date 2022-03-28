@@ -1,0 +1,22 @@
+---
+import PageLayout from '../PageLayout.astro';
+import HomeHeader from '../../components/HomeHeader.astro';
+import Card from '../../components/Card.astro';
+
+Astro.props.content.title = "Astro";
+Astro.props.content.description = ""
+const {content:{name, title, description}} = Astro.props;
+
+const allPosts = await Astro.fetchContent('../../pages/posts/*.md');
+const filteredPosts = allPosts.filter((post) => post.tags.includes(name))
+---
+<PageLayout {...Astro.props}>
+    <main class="py-12 lg:py-20">
+      <article class="max-w-6xl mx-auto px-3">
+        <HomeHeader title={title} description={description} />
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 py-8">
+          {filteredPosts.map(p => <div class="col-span-1"><Card post={p} /></div>)}
+        </section>
+      </article>
+    </main>
+</PageLayout>
