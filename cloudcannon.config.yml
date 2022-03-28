@@ -1,0 +1,16 @@
+source: src
+output: dist
+
+collections_config:
+  posts:
+    path: pages/posts
+    output: true
+    parser: front-matter
+    glob:
+      - '**/*.md'
+  pages:
+    path: pages
+    output: true
+    parser: front-matter
+    glob:
+      - '**/*.md'

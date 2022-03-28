@@ -1,30 +1,17 @@
 ---
-import BaseHead from '../components/Head/BaseHead.astro';
-import Nav from '../components/Nav.astro';
+import PageLayout from './PageLayout.astro';
 import HomeHeader from '../components/HomeHeader.astro';
 import Card from '../components/Card.astro';
-import Footer from '../components/Footer/Footer.astro'
 
 interface MarkdownFrontmatter {
   date: number;
 }
 
-let title = 'Creek';
-let description = 'A Theme for Astro';
-let seoDescription = 'Creek is a theme for Astro static site generator';
-
-let allPosts = Astro.fetchContent<MarkdownFrontmatter>('./posts/*.md');
+const {content:{title, description}} = Astro.props;
+let allPosts = Astro.fetchContent<MarkdownFrontmatter>('../pages/posts/*.md');
 allPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date).valueOf());
 ---
-
-<html lang="en">
-  <head>
-    <BaseHead title={title} description={seoDescription} />
-  </head>
-
-  <body class="bg-white text-black font-body leading-normal personality-casual">
-    <Nav />
-
+<PageLayout {...Astro.props}>
     <main class="py-12 lg:py-20">
       <article class="max-w-6xl mx-auto px-3">
         <HomeHeader title={title} description={description} />
@@ -43,7 +30,4 @@ allPosts = allPosts.sort((a, b) => new Date(b.date).valueOf() - new Date(a.date)
         See All<span class="squiggle">&rarr;</span>
       </a>
     </section>
-
-    <Footer />
-  </body>
-</html>
+</PageLayout>
