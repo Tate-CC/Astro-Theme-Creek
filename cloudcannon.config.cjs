@@ -23,14 +23,14 @@ module.exports = {
       "output": "true",
       "parser": "front-matter",
       "url": (filePath) => `/tags/${getFilename(filePath)}`,
-      "glob": ['**/*.md', '!**/index.md']
+      "glob": ['**/*.md']
     },
     "pages": {
       "path": "pages",
       "output": true,
       "parser": "front-matter",
       "url": (filePath) => `/${getFilename(filePath)}`,
-      "glob": ['*.md'],
+      "glob": ['**/*.md'],
     }
   }
 }
