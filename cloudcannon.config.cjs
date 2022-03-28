@@ -31,7 +31,7 @@ module.exports = {
           }
         }
       },
-      _enabled_editors: ['visual', 'content']
+      _enabled_editors: ['content', 'visual']
     },
     tags: {
       path: "pages/tags",
