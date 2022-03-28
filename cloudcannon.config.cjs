@@ -1,7 +1,10 @@
 const getFilename = (filePath) => {
   const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.indexOf('.'));
-  if (fileName.endsWith('index')) {
+  if (fileName === 'index') {
     return "";
+  }
+  if (fileName === '404') {
+    return '404.html'
   }
   return `${fileName}/`
 }
@@ -24,7 +27,7 @@ module.exports = {
       "parser": "front-matter",
       "url": (filePath) => `/tags/${getFilename(filePath)}`,
       "glob": ['**/*.md'],
-      "filter":{
+      "filter": {
         "exclude": ["index.md"]
       }
     },
@@ -34,7 +37,7 @@ module.exports = {
       "parser": "front-matter",
       "url": (filePath) => `/${getFilename(filePath)}`,
       "glob": ['**/*.md'],
-      "filter":{
+      "filter": {
         "base": "strict"
       }
     }
