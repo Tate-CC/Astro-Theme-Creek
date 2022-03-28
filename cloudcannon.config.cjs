@@ -20,7 +20,7 @@ module.exports = {
     },
     "tags": {
       "path": "pages/tags",
-      "output": "true",
+      "output": true,
       "parser": "front-matter",
       "url": (filePath) => `/tags/${getFilename(filePath)}`,
       "glob": ['**/*.md']
