@@ -14,9 +14,6 @@ module.exports = {
   output: "dist",
 
   collections_config: {
-    _inputs: {
-      layout: { hidden: true }
-    },
     posts: {
       path: "pages/posts",
       output: true,
@@ -55,5 +52,8 @@ module.exports = {
         base: "strict"
       }
     }
-  }
+  },
+  _inputs: {
+    layout: { hidden: true }
+  },
 }
