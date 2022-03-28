@@ -1,3 +1,11 @@
+const getFilename = (filePath) => {
+  const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.indexOf('.'));
+  if (fileName.endsWith('index')) {
+    return "";
+  }
+  return `${fileName}/`
+}
+
 module.exports = {
   "source": "src",
   "output": "dist",
@@ -8,21 +16,21 @@ module.exports = {
       "output": true,
       "parser": "front-matter",
       "glob": ['**/*.md'],
-      "url": (filePath) => `/posts/${filePath.slice(filePath.lastIndexOf('/') + 1, filePath.indexOf('.'))}/`,
+      "url": (filePath) => `/posts/${getFilename(filePath)}`,
     },
     "tags": {
       "path": "pages/tags",
       "output": "true",
       "parser": "front-matter",
-      "url": (filePath) => `tags/${filePath.slice(filePath.lastIndexOf('/') + 1, filePath.indexOf('.'))}/`,
+      "url": (filePath) => `/tags/${getFilename(filePath)}`,
       "glob": ['**/*.md', '!**/index.md']
     },
     "pages": {
       "path": "pages",
       "output": true,
       "parser": "front-matter",
-      "url": (filePath) => `/${filePath.slice(filePath.lastIndexOf('/') + 1, filePath.indexOf('.'))}/`,
-      "glob": ['*.md', '!posts/*', '!tags/*'],
+      "url": (filePath) => `/${getFilename(filePath)}`,
+      "glob": ['*.md'],
     }
   }
 }
