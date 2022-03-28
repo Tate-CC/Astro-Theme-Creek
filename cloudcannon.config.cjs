@@ -20,9 +20,15 @@ module.exports = {
       "parser": "front-matter",
       "glob": ['**/*.md'],
       "url": (filePath) => `/posts/${getFilename(filePath)}`,
-      "_inputs":{
-        "hero":{
+      "_inputs": {
+        "hero": {
           type: 'image'
+        },
+        "tags": {
+          type: "multiselect",
+          options: {
+            values: "collections.tags"
+          }
         }
       }
     },
