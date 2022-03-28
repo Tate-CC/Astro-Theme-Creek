@@ -34,6 +34,9 @@ module.exports = {
       "parser": "front-matter",
       "url": (filePath) => `/${getFilename(filePath)}`,
       "glob": ['**/*.md'],
+      "filter":{
+        "base": "strict"
+      }
     }
   }
 }
