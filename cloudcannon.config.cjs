@@ -30,7 +30,8 @@ module.exports = {
             values: "collections.tags"
           }
         }
-      }
+      },
+      _enabled_editors: ['visual', 'content']
     },
     tags: {
       path: "pages/tags",
@@ -40,7 +41,8 @@ module.exports = {
       glob: ['**/*.md'],
       filter: {
         exclude: ["index.md"]
-      }
+      },
+      _enabled_editors: ['data']
     },
     pages: {
       path: "pages",
@@ -50,7 +52,8 @@ module.exports = {
       glob: ['**/*.md'],
       filter: {
         base: "strict"
-      }
+      },
+      _enabled_editors: ['visual']
     }
   },
   _inputs: {
