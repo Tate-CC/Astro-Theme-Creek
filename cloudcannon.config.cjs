@@ -19,7 +19,7 @@ module.exports = {
       output: true,
       parser: "front-matter",
       glob: ['**/*.md'],
-      url: (filePath) => `/posts/${getFilename(filePath)}`,
+      url: "/posts/[slug]"
       _inputs: {
         hero: {
           type: 'image'
@@ -37,7 +37,7 @@ module.exports = {
       path: "src/pages/tags",
       output: true,
       parser: "front-matter",
-      url: (filePath) => `/tags/${getFilename(filePath)}`,
+      url: "/tags/[slug]",
       glob: ['**/*.md'],
       filter: {
         exclude: ["index.md"]
@@ -48,7 +48,7 @@ module.exports = {
       path: "src/pages",
       output: true,
       parser: "front-matter",
-      url: "[full_slug]",
+      url: "/[slug]",
       glob: ['**/*.md'],
       filter: {
         base: "strict"
