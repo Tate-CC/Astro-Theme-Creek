@@ -10,12 +10,12 @@ const getFilename = (filePath) => {
 }
 
 module.exports = {
-  source: "src",
+  source: ".",
   output: "dist",
 
   collections_config: {
     posts: {
-      path: "pages/posts",
+      path: "src/pages/posts",
       output: true,
       parser: "front-matter",
       glob: ['**/*.md'],
@@ -34,7 +34,7 @@ module.exports = {
       _enabled_editors: ['content', 'visual']
     },
     tags: {
-      path: "pages/tags",
+      path: "src/pages/tags",
       output: true,
       parser: "front-matter",
       url: (filePath) => `/tags/${getFilename(filePath)}`,
@@ -45,7 +45,7 @@ module.exports = {
       _enabled_editors: ['data']
     },
     pages: {
-      path: "pages",
+      path: "src/pages",
       output: true,
       parser: "front-matter",
       url: (filePath) => `/${getFilename(filePath)}`,
@@ -59,4 +59,5 @@ module.exports = {
   _inputs: {
     layout: { hidden: true }
   },
+  paths: { uploads: 'public', static: 'public' },
 }
