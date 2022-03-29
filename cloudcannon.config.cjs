@@ -48,7 +48,7 @@ module.exports = {
       path: "src/pages",
       output: true,
       parser: "front-matter",
-      url: (filePath) => `/${getFilename(filePath)}`,
+      url: "[full_slug]",
       glob: ['**/*.md'],
       filter: {
         base: "strict"
