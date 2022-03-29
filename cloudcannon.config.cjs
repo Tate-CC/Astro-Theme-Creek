@@ -31,7 +31,7 @@ module.exports = {
       filter: {
         exclude: ["index.md"]
       },
-      _enabled_editors: ['data']
+      _enabled_editors: ['data', 'visual']
     },
     pages: {
       path: "src/pages",
