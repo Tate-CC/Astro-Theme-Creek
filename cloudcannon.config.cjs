@@ -8,7 +8,7 @@ module.exports = {
       output: true,
       parser: "front-matter",
       glob: ['**/*.md'],
-      url: "/posts/[slug]"
+      url: "/posts/[slug]",
       _inputs: {
         hero: {
           type: 'image'
