@@ -1,14 +1,3 @@
-const getFilename = (filePath) => {
-  const fileName = filePath.slice(filePath.lastIndexOf('/') + 1, filePath.indexOf('.'));
-  if (fileName === 'index') {
-    return "";
-  }
-  if (fileName === '404') {
-    return '404.html'
-  }
-  return `${fileName}/`
-}
-
 module.exports = {
   source: ".",
   output: "dist",
